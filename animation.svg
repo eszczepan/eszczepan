@@ -1,53 +1,48 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="8cm" height="3cm"  viewBox="0 0 800 300"
-     xmlns="http://www.w3.org/2000/svg" version="1.1">
-  <desc>Example anim01 - demonstrate animation elements</desc>
-  <rect x="1" y="1" width="798" height="298" 
-        fill="none" stroke="blue" stroke-width="2" />
-  <!-- The following illustrates the use of the 'animate' element
-        to animate a rectangles x, y, and width attributes so that
-        the rectangle grows to ultimately fill the viewport. -->
-  <rect id="RectElement" x="300" y="100" width="300" height="100"
-        fill="rgb(255,255,0)"  >
-    <animate attributeName="x" attributeType="XML"
-             begin="0s" dur="9s" fill="freeze" from="300" to="0" />
-    <animate attributeName="y" attributeType="XML"
-             begin="0s" dur="9s" fill="freeze" from="100" to="0" />
-    <animate attributeName="width" attributeType="XML"
-             begin="0s" dur="9s" fill="freeze" from="300" to="800" />
-    <animate attributeName="height" attributeType="XML"
-             begin="0s" dur="9s" fill="freeze" from="100" to="300" />
-  </rect>
-  <!-- Set up a new user coordinate system so that
-        the text string's origin is at (0,0), allowing
-        rotation and scale relative to the new origin -->
-  <g transform="translate(100,100)" >
-    <!-- The following illustrates the use of the 'set', 'animateMotion',
-         'animateColor' and 'animateTransform' elements. The 'text' element 
-         below starts off hidden (i.e., invisible). At 3 seconds, it:
-           * becomes visible
-           * continuously moves diagonally across the viewport
-           * changes color from blue to dark red
-           * rotates from -30 to zero degrees
-           * scales by a factor of three. -->
-    <text id="TextElement" x="0" y="0"
-          font-family="Verdana" font-size="35.27" visibility="hidden"  > 
-      It's alive!
-      <set attributeName="visibility" attributeType="CSS" to="visible"
-           begin="3s" dur="6s" fill="freeze" />
-      <animateMotion path="M 0 0 L 100 100" 
-           begin="3s" dur="6s" fill="freeze" />
-      <animateColor attributeName="fill" attributeType="CSS"
-           from="rgb(0,0,255)" to="rgb(128,0,0)"
-           begin="3s" dur="6s" fill="freeze" />
-      <animateTransform attributeName="transform" attributeType="XML"
-           type="rotate" from="-30" to="0"
-           begin="3s" dur="6s" fill="freeze" />
-      <animateTransform attributeName="transform" attributeType="XML"
-           type="scale" from="1" to="3" additive="sum"
-           begin="3s" dur="6s" fill="freeze" />
-    </text>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+ <style>
+
+.wave-1 {
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.wave-2 {
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.wave-3 {
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.wave-4 {
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+   transform: translate3d(-90px,0,0);
+  }
+  100% { 
+    transform: translate3d(85px,0,0);
+  }
+}
+ </style>
+
+ <defs>
+    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+  </defs>
+  <g class="parallax">
+    <use class="wave-1" xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+    <use class="wave-2" xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+    <use class="wave-3" xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+    <use class="wave-4" xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
   </g>
 </svg>
+
+
