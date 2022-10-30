@@ -39,10 +39,10 @@
   </defs>
   <g class="parallax">
 
-    <use class="wave-1" xlink:href="#gentle-wave" x="48" y="7" fill="rgb(40, 80, 160, 0.9)" />
-    <use class="wave-2" xlink:href="#gentle-wave" x="48" y="5" fill="rgba(45, 85, 170, 0.9)" />
-    <use class="wave-3" xlink:href="#gentle-wave" x="48" y="3" fill="rgba(52, 97, 193, 0.9)" />
-    <use class="wave-4" xlink:href="#gentle-wave" x="48" y="0" fill="rgba(69, 121, 226, 0.9)" />
+    <use class="wave-1" xlink:href="#gentle-wave" x="48" y="7" fill="rgb(40, 80, 160, 0.8)" />
+    <use class="wave-2" xlink:href="#gentle-wave" x="48" y="5" fill="rgba(45, 85, 170, 0.8)" />
+    <use class="wave-3" xlink:href="#gentle-wave" x="48" y="3" fill="rgba(52, 97, 193, 0.8)" />
+    <use class="wave-4" xlink:href="#gentle-wave" x="48" y="0" fill="rgba(69, 121, 226, 0.8)" />
 
 
   </g>
